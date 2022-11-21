@@ -1,6 +1,6 @@
 package ro.trellteam.core.comparator;
 
-import ro.dev.trellteam.domain.CardLog;
+import ro.trellteam.core.domain.CardLog;
 
 import java.util.Comparator;
 
