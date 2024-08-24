@@ -5,7 +5,7 @@ import ro.trellteam.core.repository.domain.CardLog;
 
 import java.util.Optional;
 
-public interface CardLogRepository extends JpaRepository<CardLog, Long> {
+public interface CardLogRepo extends JpaRepository<CardLog, Long> {
     CardLog save(CardLog log);
     Optional<CardLog> findById(Long id);
 }

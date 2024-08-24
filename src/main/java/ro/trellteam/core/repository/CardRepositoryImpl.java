@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class CardRepositoryImpl {
-    private final CardRepository cardRepository;
+    private final CardRepo cardRepo;
 
     /**
      * Method used to save a card in the database.
@@ -21,7 +21,7 @@ public class CardRepositoryImpl {
      */
     public Card save(Card card) {
         log.debug("CardRepositoryImpl--createCard--IN");
-        card = cardRepository.save(card);
+        card = cardRepo.save(card);
         log.debug("CardRepositoryImpl--createCard--card: {}", card);
         return card;
     }
@@ -36,7 +36,7 @@ public class CardRepositoryImpl {
 
         Card card = null;
         try {
-            card = cardRepository.findById(id).get();
+            card = cardRepo.findById(id).get();
         } catch(Exception e) {
             log.error(e.getMessage());
             throw new TrellGenericException("CORE_ERR_2");
@@ -57,7 +57,7 @@ public class CardRepositoryImpl {
 
         List<Card> cards = null;
         try {
-            cards = cardRepository.findAllByIdPublisher(idPublisher);
+            cards = cardRepo.findAllByIdPublisher(idPublisher);
             if(cards == null || cards.isEmpty()) throw new Exception("No card was found for the publisher id: " + idPublisher);
         } catch(Exception e) {
             log.error(e.getMessage());
@@ -79,7 +79,7 @@ public class CardRepositoryImpl {
 
         List<Card> cards = null;
         try {
-            cards = cardRepository.findAllByIdAssignedUser(idAssignedUser);
+            cards = cardRepo.findAllByIdAssignedUser(idAssignedUser);
             if(cards == null || cards.isEmpty()) throw new Exception("No card was found for the assigned user id: " + idAssignedUser);
         } catch(Exception e) {
             log.error(e.getMessage());

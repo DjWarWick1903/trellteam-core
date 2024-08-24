@@ -1,5 +1,6 @@
 package ro.trellteam.core.bu.controller.v1;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,6 @@ import ro.trellteam.core.data.dto.response.ObjectResponse;
 import ro.trellteam.core.data.exceptions.TrellGenericException;
 import ro.trellteam.core.bu.service.v1.CardService;
 
-import javax.validation.Valid;
 import java.net.URI;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;

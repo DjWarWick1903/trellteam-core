@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface TypeRepository extends JpaRepository<Type, Long> {
+public interface TypeRepo extends JpaRepository<Type, Long> {
     List<Type> findByIdOrganisation(Long idOrganisation);
     Type save(Type type);
     Optional<Type> findById(Long id);

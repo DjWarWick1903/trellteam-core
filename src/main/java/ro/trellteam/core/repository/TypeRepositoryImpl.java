@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class TypeRepositoryImpl {
-    private TypeRepository typeRepository;
+    private TypeRepo typeRepo;
 
     /**
      * Method used to save a type inside the database.
@@ -21,7 +21,7 @@ public class TypeRepositoryImpl {
      */
     public Type save(Type type) {
         log.debug("TypeRepositoryImpl--save--IN");
-        type = typeRepository.save(type);
+        type = typeRepo.save(type);
         log.debug("TypeRepositoryImpl--save--type: {}", type.toString());
         return type;
     }
@@ -36,7 +36,7 @@ public class TypeRepositoryImpl {
 
         List<Type> types = null;
         try {
-            types = typeRepository.findByIdOrganisation(idOrganisation);
+            types = typeRepo.findByIdOrganisation(idOrganisation);
         } catch(Exception e) {
             log.error(e.getMessage());
             throw new TrellGenericException("TRELL_ERR_1");
@@ -57,7 +57,7 @@ public class TypeRepositoryImpl {
 
         Type type = null;
         try {
-            type = typeRepository.findById(id).get();
+            type = typeRepo.findById(id).get();
         } catch(Exception e) {
             log.error(e.getMessage());
             throw new TrellGenericException("TRELL_ERR_1");

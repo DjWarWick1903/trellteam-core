@@ -1,5 +1,6 @@
 package ro.trellteam.core.bu.service.v1;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,6 @@ import ro.trellteam.core.repository.domain.Card;
 import ro.trellteam.core.repository.domain.CardLog;
 import ro.trellteam.core.repository.domain.Type;
 
-import javax.transaction.Transactional;
 import java.util.Date;
 
 @Service

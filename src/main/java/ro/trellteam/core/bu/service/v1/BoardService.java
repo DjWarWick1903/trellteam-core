@@ -1,5 +1,6 @@
 package ro.trellteam.core.bu.service.v1;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -9,7 +10,7 @@ import ro.trellteam.core.data.dto.response.ObjectResponse;
 import ro.trellteam.core.util.mapper.BoardMapper;
 import ro.trellteam.core.repository.BoardRepositoryImpl;
 
-import javax.transaction.Transactional;
+
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;

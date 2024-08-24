@@ -5,7 +5,7 @@ import ro.trellteam.core.repository.domain.Comment;
 
 import java.util.Optional;
 
-public interface CommentRepository extends JpaRepository<Comment, Long> {
+public interface CommentRepo extends JpaRepository<Comment, Long> {
     Comment save(Comment comment);
     Optional<Comment> findById(Long id);
 }

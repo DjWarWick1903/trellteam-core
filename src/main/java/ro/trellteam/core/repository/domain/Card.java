@@ -1,5 +1,6 @@
 package ro.trellteam.core.repository.domain;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,6 @@ import ro.trellteam.core.util.comparator.CommentComparator;
 import ro.trellteam.core.util.comparator.LogComparator;
 import ro.trellteam.core.data.enums.CardStatusEnum;
 
-import javax.persistence.*;
 import java.util.Set;
 import java.util.TreeSet;
 

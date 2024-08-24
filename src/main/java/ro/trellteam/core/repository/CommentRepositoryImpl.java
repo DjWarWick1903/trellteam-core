@@ -10,7 +10,7 @@ import ro.trellteam.core.data.exceptions.TrellGenericException;
 @Slf4j
 @RequiredArgsConstructor
 public class CommentRepositoryImpl {
-    private CommentRepository commentRepository;
+    private CommentRepo commentRepo;
 
     /**
      * Method used to save a comment in the database.
@@ -19,7 +19,7 @@ public class CommentRepositoryImpl {
      */
     public Comment save(Comment comment) {
         log.debug("CommentRepositoryImpl--save--IN");
-        comment = commentRepository.save(comment);
+        comment = commentRepo.save(comment);
         log.debug("CommentRepositoryImpl--save--comment: {}", comment);
         return comment;
     }
@@ -38,7 +38,7 @@ public class CommentRepositoryImpl {
             log.error(e.getMessage());
             throw new TrellGenericException("CORE_ERR_11");
         }
-        final Comment comment = commentRepository.findById(id).get();
+        final Comment comment = commentRepo.findById(id).get();
 
         log.debug("CommentRepositoryImpl--findById--comment: {}", comment);
 

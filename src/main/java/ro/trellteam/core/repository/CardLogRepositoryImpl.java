@@ -10,7 +10,7 @@ import ro.trellteam.core.data.exceptions.TrellGenericException;
 @Slf4j
 @RequiredArgsConstructor
 public class CardLogRepositoryImpl {
-    private final CardLogRepository cardLogRepository;
+    private final CardLogRepo cardLogRepo;
 
     /**
      * Method used to save a card log in the database.
@@ -19,7 +19,7 @@ public class CardLogRepositoryImpl {
      */
     public CardLog save(CardLog cardLog) {
         log.debug("CardLogRepositoryImpl--save--IN");
-        cardLog = cardLogRepository.save(cardLog);
+        cardLog = cardLogRepo.save(cardLog);
         log.debug("CardLogRepositoryImpl--save--cardLog: {}", cardLog);
         return cardLog;
     }
@@ -34,7 +34,7 @@ public class CardLogRepositoryImpl {
 
         CardLog cardLog = null;
         try {
-            cardLog = cardLogRepository.findById(id).get();
+            cardLog = cardLogRepo.findById(id).get();
         } catch(final Exception exception) {
             log.error(exception.getMessage());
             throw new TrellGenericException("CORE_ERR_3");

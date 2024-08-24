@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface CardRepository extends JpaRepository<Card, Long>{
+public interface CardRepo extends JpaRepository<Card, Long>{
 
     Card save(Card card);
     List<Card> findAllByIdAssignedUser(Long idAssignedUser);

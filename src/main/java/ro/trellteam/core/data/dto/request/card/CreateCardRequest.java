@@ -1,13 +1,13 @@
 package ro.trellteam.core.data.dto.request.card;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import ro.trellteam.core.data.dto.CardDto;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter

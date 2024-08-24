@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class BoardRepositoryImpl {
-    private final BoardRepository boardRepository;
+    private final BoardRepo boardRepository;
 
     /**
      * Method to get a list of boards starting from a department id.

@@ -1,11 +1,12 @@
 package ro.trellteam.core.data.dto;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ro.trellteam.core.data.enums.CardStatusEnum;
 
-import javax.validation.constraints.NotNull;
+
 import java.util.Set;
 
 @Data
