@@ -1,7 +1,7 @@
 package ro.trellteam.core.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ro.trellteam.core.domain.CardLog;
+import ro.trellteam.core.repository.domain.CardLog;
 
 import java.util.Optional;
 

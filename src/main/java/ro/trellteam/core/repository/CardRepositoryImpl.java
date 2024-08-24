@@ -3,8 +3,8 @@ package ro.trellteam.core.repository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import ro.trellteam.core.domain.Card;
-import ro.trellteam.core.exceptions.TrellGenericException;
+import ro.trellteam.core.repository.domain.Card;
+import ro.trellteam.core.data.exceptions.TrellGenericException;
 
 import java.util.List;
 
