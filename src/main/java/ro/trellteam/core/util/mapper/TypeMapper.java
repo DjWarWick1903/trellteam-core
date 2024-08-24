@@ -1,8 +1,8 @@
 package ro.trellteam.core.util.mapper;
 
 import org.mapstruct.Mapper;
-import ro.dev.trellteam.domain.Type;
-import ro.dev.trellteam.web.dto.TypeDto;
+import ro.trellteam.core.repository.domain.Type;
+import ro.trellteam.core.data.dto.TypeDto;
 
 @Mapper(componentModel = "spring")
 public interface TypeMapper {

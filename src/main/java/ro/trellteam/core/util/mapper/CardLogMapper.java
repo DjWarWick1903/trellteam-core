@@ -1,8 +1,8 @@
 package ro.trellteam.core.util.mapper;
 
 import org.mapstruct.Mapper;
-import ro.dev.trellteam.domain.CardLog;
-import ro.dev.trellteam.web.dto.CardLogDto;
+import ro.trellteam.core.repository.domain.CardLog;
+import ro.trellteam.core.data.dto.CardLogDto;
 
 @Mapper(componentModel = "spring")
 public interface CardLogMapper {
