@@ -5,6 +5,7 @@ import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.util.CollectionUtils;
@@ -38,7 +39,8 @@ public class ExceptionAdvicer extends ResponseEntityExceptionHandler {
     private static final String TIMESTAMP = "timestamp";
     private static final String TYPE = "type";
 
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException exception, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException exception, HttpHeaders headers, HttpStatusCode statusCode, WebRequest request) {
         List<String> validationErrors = exception.getBindingResult()
                 .getFieldErrors()
                 .stream()
@@ -47,7 +49,9 @@ public class ExceptionAdvicer extends ResponseEntityExceptionHandler {
         return getExceptionResponseEntity(exception, HttpStatus.BAD_REQUEST, request, validationErrors);
     }
 
-    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException exception, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    @Override
+    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException exception, HttpHeaders headers, HttpStatusCode statusCode, WebRequest request) {
+        final HttpStatus status = HttpStatus.valueOf(statusCode.value());
         return getExceptionResponseEntity(exception, status, request, Collections.singletonList(exception.getLocalizedMessage()));
     }
 
